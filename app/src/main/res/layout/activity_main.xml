@@ -15,5 +15,13 @@
         android:id="@+id/main_b_onboard_center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="中心启动"/>
+        android:text="中心动画"/>
+
+    <Button
+        android:id="@+id/main_b_onboard_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_b_onboard_center"
+        android:text="预留位置"/>
+
 </RelativeLayout>

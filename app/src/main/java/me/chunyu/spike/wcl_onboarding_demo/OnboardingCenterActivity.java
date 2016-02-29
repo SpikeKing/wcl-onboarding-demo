@@ -15,8 +15,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * 加载中心
- * <p/>
+ * 居中位置移动的启动动画
+ * <p>
  * Created by wangchenlong on 16/2/28.
  */
 public class OnboardingCenterActivity extends AppCompatActivity {
@@ -28,18 +28,6 @@ public class OnboardingCenterActivity extends AppCompatActivity {
     @Bind(R.id.onboard_iv_logo) ImageView mIvLogo;
     @Bind(R.id.onboard_b_choice_1) Button mBChoice1;
     @Bind(R.id.onboard_b_choice_2) Button mBChoice2;
-
-    private View.OnClickListener mNiceListener = new View.OnClickListener() {
-        @Override public void onClick(View v) {
-            Toast.makeText(getApplicationContext(), "Nice!", Toast.LENGTH_SHORT).show();
-        }
-    };
-
-    private View.OnClickListener mBackListener = new View.OnClickListener() {
-        @Override public void onClick(View v) {
-            onBackPressed();
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +64,8 @@ public class OnboardingCenterActivity extends AppCompatActivity {
             viewAnimator.setInterpolator(new DecelerateInterpolator()).start();
         }
 
-        mBChoice1.setOnClickListener(mNiceListener);
-        mBChoice2.setOnClickListener(mBackListener);
+        mBChoice1.setOnClickListener(v ->
+                Toast.makeText(getApplicationContext(), "Nice!", Toast.LENGTH_SHORT).show());
+        mBChoice2.setOnClickListener(v -> onBackPressed());
     }
 }

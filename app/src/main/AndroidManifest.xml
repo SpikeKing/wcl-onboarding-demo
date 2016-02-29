@@ -18,6 +18,9 @@
         <activity
             android:name=".OnboardingCenterActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".OnboardingPlaceholderActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -58,7 +58,7 @@
             android:background="@color/colorAccent"
             android:scaleX="0"
             android:scaleY="0"
-            android:text="More Words"
+            android:text="Quit"
             android:textColor="@android:color/white"/>
 
     </LinearLayout>

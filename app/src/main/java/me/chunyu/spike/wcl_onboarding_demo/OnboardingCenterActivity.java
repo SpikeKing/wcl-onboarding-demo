@@ -16,6 +16,7 @@ import butterknife.ButterKnife;
 
 /**
  * 居中位置移动的启动动画
+ * 三种动画方式: 移动\渐变\缩放.
  * <p>
  * Created by wangchenlong on 16/2/28.
  */
@@ -35,7 +36,7 @@ public class OnboardingCenterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_onboarding_center);
         ButterKnife.bind(this);
 
-        // 向下移动
+        // 向上移动
         ViewCompat.animate(mIvLogo)
                 .translationY(-300)
                 .setStartDelay(STARTUP_DELAY)
@@ -48,6 +49,7 @@ public class OnboardingCenterActivity extends AppCompatActivity {
             ViewPropertyAnimatorCompat viewAnimator;
 
             // TextView控件, Button是TextView的子类
+
             // 从消失到显示
             if (!(v instanceof Button)) {
                 viewAnimator = ViewCompat.animate(v)
@@ -58,7 +60,7 @@ public class OnboardingCenterActivity extends AppCompatActivity {
                 viewAnimator = ViewCompat.animate(v)
                         .scaleY(1).scaleX(1)
                         .setStartDelay((ITEM_DELAY * i) + 500)
-                        .setStartDelay(500);
+                        .setDuration(500);
             }
 
             viewAnimator.setInterpolator(new DecelerateInterpolator()).start();

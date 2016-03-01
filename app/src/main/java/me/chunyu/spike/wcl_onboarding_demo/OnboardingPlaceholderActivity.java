@@ -76,6 +76,7 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
         });
     }
 
+    // Toolbar坍塌成ActionBar
     private void collapseToolbar(int height) {
         TypedValue tv = new TypedValue();
         getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true);

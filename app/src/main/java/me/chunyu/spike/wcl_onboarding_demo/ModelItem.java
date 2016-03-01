@@ -10,15 +10,15 @@ import java.util.List;
  */
 public class ModelItem {
     private String mName;
-    private int imgId;
+    private int mImgId;
 
     public ModelItem(String name, int imgId) {
-        this.author = author;
-        this.imgId = imgId;
+        mName = name;
+        mImgId = imgId;
     }
 
     public int getImgId() {
-        return imgId;
+        return mImgId;
     }
 
     public String getName() {

@@ -3,6 +3,7 @@ package me.chunyu.spike.wcl_onboarding_demo;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -19,6 +20,8 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -126,13 +129,16 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
             @Bind(R.id.item_tv_title) TextView mTvTitle;
             @Bind(R.id.item_iv_image) ImageView mIvImage;
 
+            private Context mContext;
+
             public PhViewHolder(View itemView) {
                 super(itemView);
                 ButterKnife.bind(this, itemView);
+                mContext = itemView.getContext().getApplicationContext();
             }
 
             public void bindTo(ModelItem item) {
-                mIvImage.setImageResource(item.getImgId());
+                Picasso.with(mContext).load(item.getImgId()).into(mIvImage);
                 mTvTitle.setText(item.getName());
             }
         }

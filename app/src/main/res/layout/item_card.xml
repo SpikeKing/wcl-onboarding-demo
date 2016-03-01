@@ -4,7 +4,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             android:orientation="vertical"
+             android:clipToPadding="false"
              android:padding="8dp">
 
     <android.support.v7.widget.CardView
@@ -26,7 +26,7 @@
                 android:layout_height="200dp"
                 android:contentDescription="@null"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_alexey"/>
+                android:src="@drawable/img_total_girls"/>
 
             <TextView
                 android:id="@+id/item_tv_title"
@@ -40,13 +40,12 @@
                 tools:ignore="HardcodedText"/>
 
             <TextView
-                android:id="@+id/item_tv_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="4dp"
-                android:text="Provided by 500px"
+                android:text="少女时代"
                 android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
                 tools:ignore="HardcodedText"/>
 

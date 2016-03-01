@@ -123,7 +123,7 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
 
             public PhViewHolder(View itemView) {
                 super(itemView);
-                ButterKnife.bind(itemView);
+                ButterKnife.bind(this, itemView);
             }
 
             public void bindTo(ModelItem item) {

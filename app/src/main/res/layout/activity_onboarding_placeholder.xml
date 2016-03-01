@@ -21,10 +21,12 @@
 
             <TextView
                 android:id="@+id/placeholder_tv_title"
+                style="@android:style/TextAppearance.DeviceDefault.Large"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="0"
-                android:text="Spike"
+                android:textColor="@android:color/white"
+                android:text="I'm Spike."
                 tools:alpha="1"
                 tools:ignore="HardcodedText"/>
 

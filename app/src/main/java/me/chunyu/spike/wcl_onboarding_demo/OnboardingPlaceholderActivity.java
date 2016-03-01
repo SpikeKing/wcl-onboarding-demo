@@ -25,6 +25,7 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import me.chunyu.spike.wcl_onboarding_demo.animators.ItemAnimatorFactory;
 
 /**
  * Placeholder的启动动画
@@ -44,6 +45,8 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding_placeholder);
         ButterKnife.bind(this);
+
+        // 延迟启动动画效果
         new Handler().postDelayed(this::onAnimateCreate, 500);
     }
 
@@ -52,7 +55,8 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
         ViewCompat.animate(mTvTitle).alpha(1).start();
 
         mRvRecycler.setLayoutManager(new LinearLayoutManager(this));
-//        mRvRecycler.setItemAnimator();
+        mRvRecycler.setItemAnimator(ItemAnimatorFactory.slidein());
+
         mPhRecyclerAdapter = new PhRecyclerAdapter();
         mRvRecycler.setAdapter(mPhRecyclerAdapter);
 
@@ -74,12 +78,10 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
         getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true);
         int toolBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
         ValueAnimator valueAnimator = ValueAnimator.ofInt(height, toolBarHeight); // 动画
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override public void onAnimationUpdate(ValueAnimator animation) {
-                ViewGroup.LayoutParams lp = mTToolbar.getLayoutParams();
-                lp.height = (Integer) animation.getAnimatedValue();
-                mTToolbar.setLayoutParams(lp);
-            }
+        valueAnimator.addUpdateListener(animation -> {
+            ViewGroup.LayoutParams lp = mTToolbar.getLayoutParams();
+            lp.height = (Integer) animation.getAnimatedValue();
+            mTToolbar.setLayoutParams(lp);
         });
         valueAnimator.start();
         valueAnimator.addListener(new AnimatorListenerAdapter() {
@@ -92,13 +94,16 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
         });
     }
 
+    // 列表适配器
     public static class PhRecyclerAdapter extends RecyclerView.Adapter<PhRecyclerAdapter.PhViewHolder> {
 
-        private List<ModelItem> mItems = new ArrayList<>();
+        private final ArrayList<ModelItem> mItems = new ArrayList<>(); // 数据
 
         public void setItems(List<ModelItem> items) {
-            mItems = items;
-            notifyDataSetChanged();
+            // 启动动画的关键位, 顺次添加动画效果
+            int pos = getItemCount();
+            mItems.addAll(items);
+            notifyItemRangeInserted(pos, mItems.size());
         }
 
         @Override
@@ -116,8 +121,8 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
             return mItems.size();
         }
 
+        // 数据存储
         public static class PhViewHolder extends RecyclerView.ViewHolder {
-
             @Bind(R.id.item_tv_title) TextView mTvTitle;
             @Bind(R.id.item_iv_image) ImageView mIvImage;
 
@@ -128,7 +133,7 @@ public class OnboardingPlaceholderActivity extends AppCompatActivity {
 
             public void bindTo(ModelItem item) {
                 mIvImage.setImageResource(item.getImgId());
-                mTvTitle.setText(item.getAuthor());
+                mTvTitle.setText(item.getName());
             }
         }
     }

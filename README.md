@@ -1,4 +1,9 @@
 # wcl-onboarding-demo
-启动页面的动画效果, 避免冷启动(cold start), 提升用户体验.
 
-[参考](http://www.jianshu.com/p/ce79e88d7ddf)
+实现页面加载的变换和位移动画效果, 避免冷启动(Cold Start)
+
+博客: http://www.wangchenlong.org/
+
+本文: http://www.wangchenlong.org/2016/03/22/1603/221-start-page-anim/
+
+[参考文章](http://www.wangchenlong.org/2016/03/22/1603/221-start-page-anim/)

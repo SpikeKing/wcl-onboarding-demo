@@ -1,4 +1,4 @@
-package me.chunyu.spike.wcl_onboarding_demo;
+package org.wangchenlong.wcl_onboarding_demo;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

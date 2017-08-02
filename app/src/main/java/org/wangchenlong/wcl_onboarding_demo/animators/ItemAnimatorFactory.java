@@ -1,4 +1,4 @@
-package me.chunyu.spike.wcl_onboarding_demo.animators;
+package org.wangchenlong.wcl_onboarding_demo.animators;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.animation.DecelerateInterpolator;

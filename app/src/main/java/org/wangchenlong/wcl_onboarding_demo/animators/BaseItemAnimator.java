@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.chunyu.spike.wcl_onboarding_demo.animators;
+package org.wangchenlong.wcl_onboarding_demo.animators;
 
 import android.support.v4.animation.AnimatorCompatHelper;
 import android.support.v4.view.ViewCompat;

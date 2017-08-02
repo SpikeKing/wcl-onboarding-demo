@@ -1,4 +1,4 @@
-package me.chunyu.spike.wcl_onboarding_demo;
+package org.wangchenlong.wcl_onboarding_demo;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -23,12 +23,13 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import org.wangchenlong.wcl_onboarding_demo.animators.ItemAnimatorFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import me.chunyu.spike.wcl_onboarding_demo.animators.ItemAnimatorFactory;
 
 /**
  * Placeholder的启动动画

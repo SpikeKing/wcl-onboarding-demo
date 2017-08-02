@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="me.chunyu.spike.wcl_onboarding_demo"
+<manifest package="org.wangchenlong.wcl_onboarding_demo"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application

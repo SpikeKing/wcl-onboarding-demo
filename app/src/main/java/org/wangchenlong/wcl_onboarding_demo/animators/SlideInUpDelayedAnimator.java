@@ -1,4 +1,4 @@
-package me.chunyu.spike.wcl_onboarding_demo.animators;
+package org.wangchenlong.wcl_onboarding_demo.animators;
 
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;

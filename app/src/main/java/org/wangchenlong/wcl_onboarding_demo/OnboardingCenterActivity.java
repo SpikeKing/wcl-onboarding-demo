@@ -1,4 +1,4 @@
-package me.chunyu.spike.wcl_onboarding_demo;
+package org.wangchenlong.wcl_onboarding_demo;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewCompat;

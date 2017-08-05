@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
  * <p>
  * Created by wangchenlong on 16/2/28.
  */
-public class OnboardingCenterActivity extends AppCompatActivity {
+public class CenterActivity extends AppCompatActivity {
     public static final int STARTUP_DELAY = 300; // 启动延迟
     public static final int ANIM_ITEM_DURATION = 1000;
     public static final int ITEM_DELAY = 300;

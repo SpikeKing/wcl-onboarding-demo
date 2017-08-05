@@ -16,10 +16,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OnboardingCenterActivity"
+            android:name=".CenterActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".OnboardingPlaceholderActivity"
+            android:name=".PlaceholderActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

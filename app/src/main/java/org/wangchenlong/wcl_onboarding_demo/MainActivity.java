@@ -9,9 +9,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-
-    @Bind(R.id.main_b_onboard_center) Button mBOnboardCenter;
-    @Bind(R.id.main_b_onboard_placeholder) Button mBOnboardPlaceholder;
+    @Bind(R.id.main_b_onboard_center) Button mBCenter;
+    @Bind(R.id.main_b_onboard_placeholder) Button mBPlaceholder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mBOnboardCenter.setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, OnboardingCenterActivity.class)));
+        mBCenter.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, CenterActivity.class)));
 
-        mBOnboardPlaceholder.setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, OnboardingPlaceholderActivity.class)));
+        mBPlaceholder.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, PlaceholderActivity.class)));
     }
 }

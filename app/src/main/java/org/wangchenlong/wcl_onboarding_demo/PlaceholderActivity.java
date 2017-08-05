@@ -36,7 +36,7 @@ import butterknife.ButterKnife;
  * <p>
  * Created by wangchenlong on 16/2/29.
  */
-public class OnboardingPlaceholderActivity extends AppCompatActivity {
+public class PlaceholderActivity extends AppCompatActivity {
 
     @Bind(R.id.placeholder_tv_title) TextView mTvTitle;
     @Bind(R.id.placeholder_t_toolbar) Toolbar mTToolbar;

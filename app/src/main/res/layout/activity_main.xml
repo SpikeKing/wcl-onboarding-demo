@@ -12,15 +12,15 @@
     tools:ignore="HardcodedText">
 
     <Button
-        android:id="@+id/main_b_onboard_center"
+        android:id="@+id/main_b_center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="中心动画"/>
+        android:text="效果显示"/>
 
     <Button
-        android:id="@+id/main_b_onboard_placeholder"
+        android:id="@+id/main_b_placeholder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/main_b_onboard_center"
+        android:layout_below="@+id/main_b_center"
         android:text="预留位置"/>
 </RelativeLayout>

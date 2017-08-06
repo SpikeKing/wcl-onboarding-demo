@@ -47,22 +47,19 @@ public class CenterActivity extends AppCompatActivity {
         for (int i = 0; i < mLlContainer.getChildCount(); i++) {
             View v = mLlContainer.getChildAt(i);
             ViewPropertyAnimatorCompat viewAnimator;
-
             // TextView控件, Button是TextView的子类
-
-            // 从消失到显示
             if (!(v instanceof Button)) {
+                // 渐变动画，从消失到显示
                 viewAnimator = ViewCompat.animate(v)
                         .translationY(50).alpha(1)
                         .setStartDelay((ITEM_DELAY * i) + 500)
-                        .setDuration(1000);
+                        .setDuration(ANIM_ITEM_DURATION);
             } else { // Button控件, 从缩小到扩大
                 viewAnimator = ViewCompat.animate(v)
                         .scaleY(1).scaleX(1)
                         .setStartDelay((ITEM_DELAY * i) + 500)
-                        .setDuration(500);
+                        .setDuration(ANIM_ITEM_DURATION / 2);
             }
-
             viewAnimator.setInterpolator(new DecelerateInterpolator()).start();
         }
 

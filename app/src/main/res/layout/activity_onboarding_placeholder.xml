@@ -25,11 +25,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="0"
-                android:textColor="@android:color/white"
                 android:text="I'm Spike."
+                android:textColor="@android:color/white"
                 tools:alpha="1"
                 tools:ignore="HardcodedText"/>
-
         </android.support.v7.widget.Toolbar>
 
         <android.support.v7.widget.RecyclerView

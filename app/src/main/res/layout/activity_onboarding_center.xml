@@ -48,7 +48,9 @@
             android:scaleX="0"
             android:scaleY="0"
             android:text="Talk to me"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            tools:scaleX="1"
+            tools:scaleY="1"/>
 
         <Button
             android:id="@+id/onboard_b_choice_2"
@@ -59,7 +61,9 @@
             android:scaleX="0"
             android:scaleY="0"
             android:text="Quit"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            tools:scaleX="1"
+            tools:scaleY="1"/>
 
     </LinearLayout>
 
@@ -70,7 +74,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
         android:contentDescription="@null"
-        android:src="@drawable/img_face"
-        tools:visibility="visible"/>
+        android:src="@drawable/img_face"/>
 
 </FrameLayout>

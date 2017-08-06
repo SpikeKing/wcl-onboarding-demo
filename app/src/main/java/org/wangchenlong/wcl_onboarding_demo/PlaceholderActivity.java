@@ -50,8 +50,7 @@ public class PlaceholderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_onboarding_placeholder);
         ButterKnife.bind(this);
 
-        // 延迟启动动画效果
-        new Handler().postDelayed(this::onAnimateCreate, 500);
+        new Handler().postDelayed(this::onAnimateCreate, 500); // 延迟启动动画效果
     }
 
     // 动画创建
@@ -89,6 +88,7 @@ public class PlaceholderActivity extends AppCompatActivity {
             mTToolbar.setLayoutParams(lp);
         });
         valueAnimator.start();
+
         valueAnimator.addListener(new AnimatorListenerAdapter() {
             @Override public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);

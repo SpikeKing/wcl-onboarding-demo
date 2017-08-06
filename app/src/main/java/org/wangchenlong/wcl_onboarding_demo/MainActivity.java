@@ -9,8 +9,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.main_b_onboard_center) Button mBCenter;
-    @Bind(R.id.main_b_onboard_placeholder) Button mBPlaceholder;
+    @Bind(R.id.main_b_center) Button mBCenter;
+    @Bind(R.id.main_b_placeholder) Button mBPlaceholder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

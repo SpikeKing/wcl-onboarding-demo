@@ -7,7 +7,6 @@ import android.view.animation.Interpolator;
 
 
 public class SlideInUpDelayedAnimator extends BaseItemAnimator {
-
     private final int offsetDelay = 200;
     private final Interpolator mInterpolator;
 

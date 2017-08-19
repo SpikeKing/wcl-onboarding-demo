@@ -58,7 +58,7 @@ public class PlaceholderActivity extends AppCompatActivity {
         ViewCompat.animate(mTvTitle).alpha(1).start();
 
         mRvRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mRvRecycler.setItemAnimator(ItemAnimatorFactory.slidein());
+        mRvRecycler.setItemAnimator(ItemAnimatorFactory.slidein());  // 列表项的淡入动画
 
         mPhRecyclerAdapter = new PhRecyclerAdapter();
         mRvRecycler.setAdapter(mPhRecyclerAdapter);
@@ -66,11 +66,7 @@ public class PlaceholderActivity extends AppCompatActivity {
         mTToolbar.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override public boolean onPreDraw() {
                 mTToolbar.getViewTreeObserver().removeOnPreDrawListener(this);
-                final int widthSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-                final int heightSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-
-                mTToolbar.measure(widthSpec, heightSpec);
-                collapseToolbar(mTToolbar.getHeight());
+                collapseToolbar(mTToolbar.getHeight());  // Toolbar的坍塌效果
                 return true;
             }
         });
@@ -81,7 +77,8 @@ public class PlaceholderActivity extends AppCompatActivity {
         TypedValue tv = new TypedValue();
         getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true);
         int toolBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
-        ValueAnimator valueAnimator = ValueAnimator.ofInt(height, toolBarHeight); // 动画
+        // 动画，height->toolBarHeight，468->168
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(height, toolBarHeight);
         valueAnimator.addUpdateListener(animation -> {
             ViewGroup.LayoutParams lp = mTToolbar.getLayoutParams();
             lp.height = (Integer) animation.getAnimatedValue();
@@ -106,9 +103,8 @@ public class PlaceholderActivity extends AppCompatActivity {
 
         public void setItems(List<ModelItem> items) {
             // 启动动画的关键位, 顺次添加动画效果
-            int pos = getItemCount();
             mItems.addAll(items);
-            notifyItemRangeInserted(pos, mItems.size());
+            notifyItemRangeInserted(0, mItems.size());
         }
 
         @Override
